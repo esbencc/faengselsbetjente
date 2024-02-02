@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	
+	<style type="text/css">
+		.container p, .container a, .container h1 {
+			font-family: arial;
+		}
+		/* Primær container for hele beregneren */
+		.container {
+			font-family: helvetica, arial;
+			font-size: 16px;
+			text-align: center;
+			border: solid #0D1C46 2px;
+			border-radius: 10px;
+			padding: 20px;
+			margin: auto;
+			width: auto;
+			background-color: #264cbf;
+			color: white;
+		}
+
+		.description {
+			margin-top: 20px;
+			background-color: white;
+			border-radius: 5px;
+		}
+
+		.description p {
+			color: #0D1C46;
+			padding: 10px;
+			text-align: center;
+		}
+
+		/* Boks til alt content */
+		.beregnerContainer {
+			margin-top: 20px;
+			height: 150px;
+		}
+
+		/* Liste, select */
+		.list {
+			text-align: center;
+			font-family: arial;
+			font-weight: bold;
+			padding: 2px;
+		}
+
+		/* Beregner-knap */
+		.button {
+			margin-top: 20px;
+			font-size: 20px;
+			border: solid #0D1C46 2px;
+			background-color: white;
+			padding: 5px;
+			font-weight: bold;
+			font-family: arial;
+		}
+
+		.button:hover {
+			cursor: pointer;
+			background-color: #e0e8ff;
+		}
+
+		.result {
+			margin-top: 15px;
+			font-weight: bold;
+			margin-bottom: 50px;
+			padding-bottom:  50px;
+		}
+
+		/* Information om datakilde mv. */
+		.meta {
+			font-size: 12px;
+			font-style: italic;
+			text-align: left;
+			padding-top: 25px;
+			margin-top: 25px;
+		} .meta a {
+			color:  white;
+			text-decoration: none;
+			padding-top: 25px;
+			margin-top: 25px;
+		} 
+
+	</style>
+
+	<body>
+		<!-- Primær container for hele beregneren -->
+		<div class="container">
+			<h1>Hvad er din pris?</h1>
+
+			<div class="description">
+				<p>Der er en pris på os alle. Hvert år beregner Arbejdsmarkedets Erhvervssikring, hvor meget det koster at forsikre samtlige brancher. Vælg din branche og find ud af, hvor meget det koster at forsikre dig - og hvor meget det til sammenligning koster at forsikre fængselsbetjente.</p>
+			</div>
+
+			<div class="beregnerContainer">
+				<label for="job">
+					Vælg job/branche:
+				</label>
+				<select id="job" name="job" class="list">
+					<option value="vaelg">
+						Vælg et job
+					</option>
+
+					<option value="medier">
+						Medier
+					</option>
+
+					<option value="videregående">
+						Videregående uddannelser
+					</option>
+
+					<option value="supermarkeder">
+						Supermarkeder
+					</option>
+
+					<option value="tankstationer">
+						Tankstationer
+					</option>
+
+					<option value="landbrug">
+						Landbrug
+					</option>
+
+					<option value="gartneri">
+						Gartneri
+					</option>
+
+					<option value="fiskeri">
+						Fiskeri
+					</option>
+
+					<option value="slagter">
+						Slagter
+					</option>
+
+					<option value="bager">
+						Bager
+					</option>
+
+					<option value="renovation">
+						Renovation
+					</option>
+
+					<option value="tømrer">
+						Tømrer
+					</option>
+
+					<option value="vvs">
+						VVS
+					</option>
+
+					<option value="hoteller">
+						Hoteller
+					</option>
+
+					<option value="bilhandel">
+						Bilhandel
+					</option>
+
+					<option value="regionaltog">
+						Regional- og fjerntog
+					</option>
+
+					<option value="banker">
+						Banker
+					</option>
+
+					<option value="grundskoler">
+						Grundskoler
+					</option>
+					
+					<option value="gymnasier">
+						Gymnasier
+					</option>
+
+					<option value="hospitaler">
+						Hospitaler
+					</option>
+
+					<option value="børnehaver">
+						Børnehaver
+					</option>
+
+					<option value="vuggestuer">
+						Vuggestuer
+					</option>
+
+					<option value="dagplejemødre">
+						Dagplejemødre
+					</option>
+
+					<option value="fængselsbetjente">
+						Fængselsbetjente
+					</option>
+
+					<option value="politi">
+						Politi
+					</option>
+
+					<option value="forsvar">
+						Forsvar
+					</option>
+
+					<option value="brandvæsen">
+						Brandvæsen
+					</option>
+
+					<option value="offentlig">
+						Offentlig administration
+					</option>
+
+					<option value="kloak">
+						Kloak og rensning
+					</option>
+
+					<option value="murer">
+						Murer
+					</option>
+
+					<option value="elektriker">
+						Elektriker
+					</option>
+
+					<option value="restauranter">
+						Restauranter
+					</option>
+
+					<option value="autoværksteder">
+						Autoværksteder
+					</option>
+
+					<option value="skibe">
+						Skibe (varetransport)
+					</option>
+
+					<option value="taxi">
+						Taxi
+					</option>
+
+					<option value="buschauffører">
+						Buschauffører
+					</option>
+
+					<option value="forsikring">
+						Forsikring
+					</option>
+
+					<option value="plejehjem">
+						Plejehjem
+					</option>
+
+					<option value="fragtvognmænd">
+						Fragtvognmænd
+					</option>
+
+					<option value="andet">
+						Andet
+					</option>
+
+				</select>
+
+				<br>
+
+				<button onclick="beregner()" class="button">
+					Beregn!
+				</button>
+
+				<!-- Print resultatet -->
+				<p class="result" id="result">Hvad er din pris? <br> Vælg dit job og tryk på knappen ovenfor, for at finde ud af det!</p>
+			</div>
+
+			<!-- Information om datakilde mv. -->
+			<p class="meta">Data er hentet fra <a href="https://erhverv.atp.dk/aesvirk/satser">Arbejdsmarkedets Erhvervssikring</a>. Tallene gælder for 2022.</p>
+			
+		</div>
+
+		<script type="text/javascript">
+			function beregner() {
+				// Definer dictionary over jobs og forsikring
+				const jobs = {
+					medier : 1462,
+					supermarkeder : 376,
+					tankstationer : 927,
+					landbrug : 927,
+					gartneri : 927,
+					fiskeri : 927,
+					slagter : 1462,
+					bager : 1462,
+					renovation : 1635,
+					tømrer : 1936,
+					vvs : 996,
+					hoteller : 479,
+					bilhandel : 858,
+					regionaltog : 960,
+					banker : 396,
+					grundskoler : 517,
+					gymnasier : 517,
+					videregående : 517,
+					hospitaler : 314,
+					børnehaver : 1635,
+					vuggestuer : 1635,
+					dagplejemødre : 1635,
+					fængselsbetjente : 6950,
+					politi : 6950,
+					forsvar : 6950,
+					brandvæsen : 960,
+					offentlig : 1285,
+					kloak : 1635,
+					murer : 1936,
+					elektriker : 996,
+					restauranter : 479,
+					autoværksteder : 858,
+					skibe : 960,
+					taxi : 399,
+					buschauffører : 399,
+					forsikring : 396,
+					plejehjem : 1635,
+					fragtvognmænd : 960,
+					andet : 1266
+				}
+
+				// Definer job, så det er kønnere og nemmere at bruge
+				var jobInfo = document.getElementById("job")
+
+				// Hent værdier fra listen ned i variabel 
+				var ditJob = jobInfo.value
+
+				// Hent tekst fra options ned i variabel
+				var jobTitel = jobInfo.options[jobInfo.selectedIndex].text
+
+				// Definer result til print af resultat til sidst
+				var result = document.getElementById("result")
+
+				// Definer selvstændigt variabel 'fængselsbetjente' for nemhedens skyld
+				var fængselsbetjente = 6950
+
+				/* Loop gennem const jobs (js dictionary) og match værdien af brugerens valg.
+				Definer variabel jobForsikring som det valgte job, så 'var diff' kan kan udregnes ved at trække jobForsikring og fængselsbetjente fra hinanden. 
+				*/
+				for (let job in jobs)
+				{
+					if (job == ditJob)
+					{
+						var jobForsikring = jobs[job]
+
+						var diff = fængselsbetjente - jobForsikring
+					}
+				}
+
+			/*Såfremt det usandsynlige sker, at nogen arbejder med noget, der er lige så dyrt at forsikre: lav if else, så begge scenarier er dækket ind.*/
+			if (jobForsikring < fængselsbetjente)
+			{
+				result.innerHTML = "Det koster årligt din arbejdsgiver " + jobForsikring + " kr. at forsikre dig og andre, der arbejder med '" + jobTitel + "'. Det er " + diff + " kr. mindre end, hvad det koster at forsikre en fængselsbetjent. De koster årligt " + fængselsbetjente + " kr."
+			}
+			else if (jobForsikring >= fængselsbetjente)
+			{
+				result.innerHTML = "Det koster årligt din arbejdsgiver " + jobForsikring + " kr. at forsikre dig. Det er det samme, som det koster at forsikre en fængselsbetjent."
+			}
+			
+			else
+			{
+				result.innerHTML = "Du skal vælge et job fra listen."
+			}
+
+			}
+		</script>
+
+	</body>
+</html>
+
+<!--jobs[job])-->
